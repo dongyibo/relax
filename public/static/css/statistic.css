@@ -1,0 +1,22 @@
+.sex_title_div {
+    margin-left: -60px;
+    margin-top: -4px;
+}
+
+#sex_chart {
+    /*width: auto;*/
+    height: 500px;
+}
+
+#self_chart{
+    height: 500px;
+}
+
+.time_detail{
+    margin-left: -20px;
+    margin-top: 7px
+}
+
+.month_div{
+    margin-left: -95px;
+}

@@ -1,0 +1,50 @@
+.count_div {
+    margin-top: 30px;
+    padding: 0;
+    /*margin-bottom: 0;*/
+}
+
+.user_list_div{
+    margin-top: 10px;
+    padding:0;
+}
+
+.user_name_div{
+    margin-top: 0;
+    margin-left: -27px;
+}
+
+.name_h4{
+    /*display: inline-block;*/
+    font-size: 16px;
+}
+
+.detail_icon_div{
+    /*margin-left: 100px;*/
+    padding-left: 70px;
+}
+
+.delete_icon_div{
+    padding-left: 30px;
+    /*padding-right: 0px;*/
+    /*margin-right: 0px;*/
+}
+
+.h_color{
+    color:red;
+}
+
+.h_search_user_div{
+    margin-top: -12px;
+    margin-left: -40px;
+}
+
+.h_user_div{
+    margin-top: -12px;
+    margin-left: -70px;
+}
+
+.h_admin_div{
+    margin-top: -12px;
+    margin-left: -90px;
+}

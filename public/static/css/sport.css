@@ -1,0 +1,87 @@
+.date_icon{
+    width:25px;
+    height:25px;
+}
+
+.date_div{
+    margin-top: 4px;
+}
+
+.date_h4{
+    display: inline;
+    /*margin-top: 0;*/
+}
+
+.year_h4{
+    margin-left: -60px;
+}
+
+#form_upload_div_row{
+    display: none;
+}
+
+.form_upload_div{
+    margin-top: 20px;
+}
+
+.time_modify{
+    margin-left:-50px;
+}
+
+.time_detail{
+    margin-left: -20px;
+    margin-top: 7px
+}
+
+.gain_title{
+    margin-top: -2px;
+}
+
+.unit_div{
+    margin-top: -2px;
+    margin-left: -25px;
+    /*border: 1px solid rebeccapurple;*/
+}
+
+.unit_hour_div{
+    margin-top: -2px;
+    margin-left: -30px;
+}
+
+.unit{
+    color:silver;
+    /*margin-left: 20px;*/
+}
+
+.sport_data_span{
+    font-size: 24px;
+    font-weight: 500;
+    /*margin-right: 50px;*/
+}
+
+.minute_div{
+    margin-left: -25px;
+}
+
+.calorie_div{
+    /*padding-left: 0px;*/
+    margin-left: 120px;
+}
+
+#my_chart{
+    width:auto;
+    height:400px;
+}
+
+.chart_div{
+    margin-top: 50px;
+}
+
+.time_error_div{
+    margin-left: 10px;
+    margin-top: -30px
+}
+
+.distance_div{
+    margin-top: 30px;
+}

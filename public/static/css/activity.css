@@ -1,0 +1,71 @@
+
+.mainbox{
+    overflow:hidden;
+    position:relative;
+}
+.flashbox{
+   overflow:hidden;
+    position:relative;
+}
+.imagebox{
+    text-align:right;position:relative;z-index:999;
+}
+
+.bitdiv{display:inline-block;width:18px;height:18px;margin:0 10px 10px 0px;cursor:pointer;float:right;}
+.defimg{background-image:url(../images/my/temp/02.png)}
+.curimg{background-image:url(../images/my/temp/01.png)}
+
+.activity_time,.activity_address{
+    color:black;
+}
+
+.time_div,.address_div{
+    padding-top: 2px;
+}
+.people_num_div{
+    margin-top: -2px;
+    margin-left: -50px;
+}
+
+
+#content .content-item .content-link .caption {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    opacity: 0;
+    background: rgba(24,188,156,.9);
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+.event_detail_div{
+    display: none;
+    /*height: 300px;*/
+}
+
+.back_icon{
+    width:20px;
+    height:20px;
+}
+
+.event_detail_content{
+    max-height:200px;
+}
+
+.event_img{
+    width:300px;
+    height: 200px;
+}
+
+.h4_num{
+    display: inline-block;
+}
+.sprit{
+    font-weight: 800;
+}
+
+.btn_group_div{
+    margin-left: 20px;
+    margin-top: 20px;
+}

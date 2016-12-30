@@ -1,0 +1,13 @@
+#head {
+    height: 295px;
+    background: url(../images/my/bg3.png) no-repeat fixed;
+}
+
+.user_chart_div {
+    margin-top: 30px;
+}
+
+#user_chart{
+    width:auto;
+    height: 400px;
+}

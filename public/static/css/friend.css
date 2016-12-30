@@ -1,0 +1,184 @@
+.friend_div{
+    margin-top:50px;
+}
+
+.friend_list{
+    height: 600px;
+    padding-left: 0;
+}
+
+.friend_list_avatar{
+    width: 25px;
+    height: 25px;
+}
+
+.friend_list_icon{
+    width: 25px;height: 25px;
+}
+
+.blog_self_div{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.publish_div{
+    /*border:1px solid;*/
+    margin-bottom: 10px;
+    margin-top: -15px;
+}
+
+.blog_div{
+    background-color: white;
+    margin-top: -20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid #d9edf7;
+    width: auto
+}
+
+.blog_avatar{
+    width: 40px;
+    height: 40px;
+}
+
+.blog_content_div{
+    margin-top: 5px;
+}
+
+.blog_content{
+    font-size: 0.5cm;
+}
+
+.blog_img{
+    max-width: 730px;
+    height: auto;
+}
+
+.blog_praise_div{
+    margin-top: 10px;
+    margin-right: -15px;
+}
+
+.praise_count_div {
+    margin-top: -4px;
+}
+
+.comment_name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1b6d85;
+}
+
+.comment_name_colon {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1b6d85;
+}
+
+.comment_content{
+    padding-left: 15px;
+    /*margin-left: -50px;*/
+}
+
+.praise_users {
+    display: inline-block;
+    color: gray;
+}
+
+.praise_users_set{
+    display: inline-block;
+}
+
+.blog_icon{
+    width: 20px;
+    height: 20px;
+}
+
+.blog_comment_div{
+    margin-top: 10px;
+}
+
+.blog_close_div{
+    margin-left: -15px;
+}
+
+.blog_comment_textarea{
+    display: none;
+    padding-top: 10px;
+}
+
+.search_div{
+    display: block;
+    margin-top: 50px;
+    /*padding-bottom: 0px;*/
+}
+
+.search_list{
+    padding-left: 0;
+    padding-right: 0;
+    /*padding-bottom: 0;*/
+    margin-bottom: -30px;
+}
+
+.search_list_avatar{
+    width: 30px;
+    height:30px;
+}
+
+.search_name {
+    font-size: 18px;
+}
+
+.search_list_avatar_div{
+    margin-top: 20px;
+}
+
+.pagination_div {
+    margin-top: -30px;
+    margin-bottom: 0;
+}
+
+.search_body_div{
+    padding-bottom: 0;
+}
+
+.close_panel_div {
+    margin-top: -20px;
+    padding-right: -20px;
+    margin-bottom: 5px;
+}
+
+.praise_h5 {
+    color: red;
+}
+
+.delete_span {
+    display: none;
+}
+
+.info_to_read {
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+.record_content{
+    color: #9d9d9d;
+}
+
+#info_record_div{
+    display: none;
+}
+
+.error_prompt_div{
+    /*margin-left: 30px;*/
+    padding-left: 50px;
+    color: red;
+}
+
+.btn_double_group_div{
+    margin-left: 400px;
+}
+
+.error_prompt_p {
+    font-size: 16px;
+}
