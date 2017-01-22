@@ -139,7 +139,7 @@ header .intro-text .name {
     display: block;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: #ffffff;
 }
 .navbar-toggle .icon-bar + .icon-bar {
     margin-top: 4px;
@@ -293,6 +293,7 @@ section.success a.active {
 #content{
     background-color: #FDF9F4;
 }
+/*#FDF9F4*/
 
 #content .content-item {
     right: 0;
@@ -556,4 +557,9 @@ footer .footer-below {
     margin-bottom: -10px;
     margin-left: 0;
     background-image: url("../images/my/nav/all.png");
+}
+
+
+.color_bar_span {
+    background: #000;
 }

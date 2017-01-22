@@ -6,7 +6,7 @@
 
 @section('logout')
     <a href="{{url('home/userLogout')}}">
-        <img src="{{asset('static/images/my/nav/logout.png')}}" />
+        <img src="{{asset('static/images/admin/nav/logout.png')}}" />
     </a>
 @stop
 

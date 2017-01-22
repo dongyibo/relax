@@ -30,10 +30,13 @@
                             <div class="col-lg-1">
                                 <input id="login-auto" value="1" type="checkbox" name="User[auto_login]">
                             </div>
-                            <label for="login-auto" class="control-label col-lg-11" for="form-sex">自动登陆（一周内）</label>
+                            <label for="login-auto" class="control-label col-lg-4" style="margin-left: -20px">自动登录（一周内）</label>
                         </div>
                         <br>
-                        <button type="submit" class="btn">登  陆</button>
+                        <button type="submit" class="btn">登  录</button>
+                        <a href="javascript:void(0)" onclick="showRegister();">
+                            <h6 class="control-label col-lg-4" style="margin-top: 5px">还没账号？请<span style="color: red">注册</span></h6>
+                        </a>
                     </form>
                 </div>
             </div>

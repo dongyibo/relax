@@ -41,21 +41,21 @@
                         {{--</form>--}}
                     </div>
                     <div class="col-lg-10 intro-text">
-                        <div class="row">
-                            <span id="user_name" class="col-lg-offset-3 col-lg-4 name">{{$user->username}}</span>
+                        <div class="row" style="margin-left: -150px">
+                            <span id="user_name" class="col-lg-4 name">{{$user->username}}</span>
                         </div>
                         <div class="row">
-                            <div id="prompt_activity" class="col-lg-2">
+                            <h4 id="my_level" class="col-lg-1">level:&nbsp;{{$user->level}}</h4>
+                            <div id="prompt_activity" class="col-lg-2 col-lg-offset-2">
                                 <span class="prompt_text" id="prompt_activity_span"></span>
                             </div>
-                            <h4 id="my_level" class="col-lg-1 col-lg-offset-6">level:&nbsp;{{$user->level}}</h4>
                             @if(Request::getPathInfo()!="/user/$user->id")
-                            <div class="col-lg-1 col-lg-offset-2" >
+                            <div class="col-lg-1 col-lg-offset-6" >
                                 @section('logout')@show
                             </div>
                             @endif
                         </div>
-                        <div id="progress" onmouseover="showActivity({{$user->level}},{{$user->activity}});" class="progress progress-striped active" style="width:1000px ;">
+                        <div id="progress" onmouseover="showActivity({{$user->level}},{{$user->activity}});" class="progress progress-striped active" style="width:1000px ;background-color: #fdfdc9">
                             <div id="activity" class="progress-bar progress-bar-success" role="progressbar"
                                  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
                                  style="width: {{$activity_show}};">

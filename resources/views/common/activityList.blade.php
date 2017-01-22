@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="panel panel-default">
+    <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">
                 全部活动

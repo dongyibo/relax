@@ -28,8 +28,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-1">
+                    <div class="col-lg-3" style="margin-right: -30px;padding-top: 2px">
                         <img src="{{asset('static/images/my/hot/activity.png')}}">
+                        <span>活跃度</span>
                     </div>
                     <div class="col-lg-6 activity_div">
                         <h4 class="activity_color">{{$u->activity}}</h4>

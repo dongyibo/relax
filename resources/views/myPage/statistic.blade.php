@@ -6,7 +6,7 @@
 
 @section('logout')
     <a href="{{url('home/userLogout')}}">
-        <img src="{{asset('static/images/my/nav/logout.png')}}" />
+        <img src="{{asset('static/images/admin/nav/logout.png')}}" />
     </a>
 @stop
 
@@ -48,9 +48,9 @@
             </select>
         </div>
         <div class="col-lg-1 time_detail" style="width:10%">年</div>
-        <div class="col-lg-1 month_div" style="width: 10%">
+        <div class="col-lg-1 month_div" style="width: 11%">
             <select id="month_data" class="form-control" onchange="initDistance({{$user->id}});">
-                <option></option>
+                <option>显示全年</option>
                 @for($i=1;$i<=12;$i++)
                 <option>{{$i}}</option>
                 @endfor

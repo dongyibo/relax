@@ -245,51 +245,30 @@ class AdminController extends Controller {
 
 
     public function test(){
-        date_default_timezone_set("PRC");
-        $year='16';
-        $month='11';
-        $sm='00';
-        $ss='00';
-        $em='00';
-        $es='00';
-        $id=6;
-        for($i=1;$i<=29;$i++){
-            if($i<10){
-                $day='0'.$i;
-            }
-            else{
-                $day=$i;
-            }
-            for($j=5;$j<=21;$j+=2){
-                if($j<10){
-                    $b='0'.$j;
-                    if($j!=9){
-                        $c='0'.($j+1);
-                    }
-                    else{
-                        $c=$j+1;
-                    }
-                }
-                else{
-                    $b=$j;
-                    $c=$b+1;
-                }
-                $startTime=strtotime('20'.$year.'-'.$month.'-'.$day.' '.$b.':'.$sm.':'.$ss);
-                $endTime=strtotime('20'.$year.'-'.$month.'-'.$day.' '.$c.':'.$em.':'.$es);
-                $date='2016'.$month.$day;
-                //获取用户体重
-                $weight=Member::find($id)->weight;
-                $distance=rand(3000,6000);
-                $heat=Heat::calculateHeat($weight,$startTime,$endTime,$distance);
-                $sport_data=array('userId'=>$id,'startTime'=>$startTime,'endTime'=>$endTime,
-                    'date'=>$date,'distance'=>$distance,'heat'=>$heat);
-                //创建新数据
-                $sport=Sport::create($sport_data);
 
+        $praiseOwns = DB::table('relax_praise')
+            ->select('relax_praise.blogId')
+            ->where('relax_praise.userId','=',5)
+            ->get();
+//        dd($praiseOwn);
+        $blogs = DB::table('relax_blog')
+            ->join('relax_friend', 'relax_blog.userId', '=', 'relax_friend.friendId')
+            ->join('relax_user', 'relax_blog.userId', '=', 'relax_user.id')
+            ->select('relax_blog.*', 'relax_user.username', 'relax_user.portrait')
+            ->where('relax_friend.userId', '=', 5)
+            ->orderBy('relax_blog.created_at', 'desc')
+            ->get();
+
+        foreach ($blogs as $blog){
+            foreach($praiseOwns as $praiseOwn){
+                if ($blog->blogId == $praiseOwn->blogId){
+                    $blog->praiseOwn=true;
+//                        dd($blog);
+                }
             }
         }
-
-
+//        $blog['blogId'] == $praiseOwn['blogId']
+        dd($blogs);
     }
 
 

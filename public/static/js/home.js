@@ -1,8 +1,6 @@
 // 全局变量
 var current_item = 0;
 
-//隐藏时间
-var section_hide_time = 2000;
 
 $(document).ready(function() {
 	//导航栏事件处理
@@ -25,19 +23,19 @@ function handleNavigation() {
 			current_item = this;
 			// 根据按钮显示内容
 			if($(current_item).attr('id')=='login_link'){
-				$('.section#head').fadeOut(section_hide_time);
+				$('.section#head').hide();
 				$('#register').hide();
-				$('#login').fadeIn();
+				$('#login').show();
 			}
 			else if($(current_item).attr('id')=='register_link'){
-				$('.section#head').fadeOut(section_hide_time);
+				$('.section#head').hide();
 				$('#login').hide();
-				$('#register').fadeIn();
+				$('#register').show();
 			}
 			else if($(current_item).attr('id')=='back_link'){
 				$('#login').hide();
 				$('#register').hide();
-				$('.section#head').fadeIn();
+				$('.section#head').show();
 			}
 			else{}
 			$('a', '.mainmenu').removeClass( 'active' );
@@ -49,20 +47,28 @@ function handleNavigation() {
 }
 
 /**
+ * 显示注册面板
+ */
+function showRegister() {
+    $('#login').hide();
+    $('#register').show();
+}
+
+/**
  * 主按钮时间处理
  */
 function handleButton() {
 	$('.btn').click(function () {
 		//alert('dasdas');
 		if($(this).attr('id')=='login_btn'){
-			$('.section#head').fadeOut(section_hide_time);
+			$('.section#head').hide()
 			$('#register').hide();
-			$('#login').fadeIn();
+			$('#login').show();
 		}
 		else if($(this).attr('id')=='register_btn'){
-			$('.section#head').fadeOut(section_hide_time);
+			$('.section#head').hide();
 			$('#login').hide();
-			$('#register').fadeIn();
+			$('#register').show();
 		}
 		else{}
 		$('a', '.mainmenu').removeClass( 'active' );

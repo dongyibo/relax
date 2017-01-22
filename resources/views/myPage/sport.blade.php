@@ -6,7 +6,7 @@
 
 @section('logout')
     <a href="{{url('home/userLogout')}}">
-        <img src="{{asset('static/images/my/nav/logout.png')}}" />
+        <img src="{{asset('static/images/admin/nav/logout.png')}}" />
     </a>
 @stop
 
@@ -22,7 +22,7 @@
     </div>
 
     <div class="row">
-        <div class="panel panel-warning">
+        <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">我的运动</h3>
             </div>
@@ -251,34 +251,26 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <div class="col-lg-4 col-lg-offset-2">
+                                        <div class="col-lg-7 col-lg-offset-3">
                                             <span class="sport_data_span">{{$distance}}</span>
-                                        </div>
-                                        <div class="col-lg-3 unit_div">
                                             <h4 class="unit">公里</h4>
                                         </div>
+
                                     </div>
                                     <div class="col-lg-4">
-                                        <div class="col-lg-3 col-lg-offset-3">
+                                        <div class="col-lg-8 col-lg-offset-4">
                                             <span class="sport_data_span">{{$hour}}</span>
-                                        </div>
-                                        <div class="col-lg-3 unit_hour_div">
                                             <h4 class="unit">小时</h4>
-                                        </div>
-                                        <div class="col-lg-3 minute_div">
                                             <span class="sport_data_span">{{$minute}}</span>
-                                        </div>
-                                        <div class="col-lg-2 unit_hour_div">
                                             <h4 class="unit">分</h4>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
-                                        <div class="col-lg-5 col-lg-offset-4 calorie_div">
+                                        <div class="col-lg-8 col-lg-offset-4 calorie_div">
                                             <span class="sport_data_span">{{$heat}}</span>
-                                        </div>
-                                        <div class="col-lg-3 unit_hour_div">
                                             <h4 class="unit">大卡</h4>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="row">

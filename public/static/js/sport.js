@@ -26,14 +26,10 @@ var timeHandler=function () {
     var upper=eh*10000+em*100+es;
     //alert(lower+" "+upper);
     if(upper<=lower){
-        $('#time_error').text('结束时间有误');
-        // window.error_flag=true;
-        // console.log(window.error_flag);
+        $('#time_error').text('结束时间早于开始时间');
     }
     else{
         $('#time_error').text('');
-        // window.window.error_flag=false;
-        // console.log(window.error_flag);
     }
 };
 
@@ -41,7 +37,7 @@ var timeHandler=function () {
  * 添加时间有晚于已有的最晚的结束时间
  */
 var timeAfterAlready=function () {
-    timeHandler();
+    // timeHandler();
     var children=$('#tbody').children();
     var last=$(children[$(children).length-1]);
     var endChildren=$(last).children();
@@ -54,7 +50,7 @@ var timeAfterAlready=function () {
     var lower=parseInt(split[0])*10000+parseInt(split[1])*100+parseInt(split[2]);
     var upper=sh*10000+sm*100+ss;
     if(upper<lower){
-        $('#time_fail').text('开始时间有误');
+        $('#time_fail').text('与记录中的时间段重叠');
         //window.error_flag=true;
     }
     else{
@@ -66,23 +62,30 @@ var timeAfterAlready=function () {
 };
 
 /**
+ * 时间处理函数
+ */
+var timeFunction = function () {
+    timeHandler();
+    timeAfterAlready();
+}
+
+/**
  * 处理时间先后顺序
  */
 function handleTimeOrder() {
-    $('#start_hour').click(timeAfterAlready);
-    $('#start_minute').click(timeAfterAlready);
-    $('#start_second').click(timeAfterAlready);
-    $('#end_hour').click(timeHandler);
-    $('#end_minute').click(timeHandler);
-    $('#end_second').click(timeHandler);
+    $('#start_hour').change(timeFunction);
+    $('#start_minute').change(timeFunction);
+    $('#start_second').change(timeFunction);
+    $('#end_hour').change(timeFunction);
+    $('#end_minute').change(timeFunction);
+    $('#end_second').change(timeFunction);
 }
 
 /**
  * 上传运动数据
  */
 function uploadSportData() {
-    timeHandler();
-    timeAfterAlready();
+    timeFunction();
     if($('#time_fail').text()==''&&$('#time_error').text()==''){
         document.sport_form.submit();
     }

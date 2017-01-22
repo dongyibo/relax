@@ -59,7 +59,7 @@
                     <!-- Nice place to describe your site in a sentence or two -->
                     <div clas="row">
                         <div class="col-md-2 col-md-offset-4">
-                            <span><a id="login_btn" href="javascript:void(0)" class="btn btn-default btn-lg">登陆</a></span>
+                            <span><a id="login_btn" href="javascript:void(0)" class="btn btn-default btn-lg">登录</a></span>
                         </div>
                         <div class="col-md-2">
                             <span><a id="register_btn" href="javascript:void(0)" class="btn btn-default btn-lg">注册</a></span>

@@ -6,7 +6,7 @@
 
 @section('logout')
     <a href="{{url('home/userLogout')}}">
-        <img src="{{asset('static/images/my/nav/logout.png')}}" />
+        <img src="{{asset('static/images/admin/nav/logout.png')}}" />
     </a>
 @stop
 
@@ -77,7 +77,7 @@
                     <h3 class="panel-title">关注列表</h3>
                 </div>
                 <div class="panel-body">
-                    {{--好友列表美容--}}
+                    {{--好友列表--}}
                     <ul class="list-group" id="friend_list">
                         @foreach($friends as $friend)
                         <li class="list-group-item">
@@ -89,11 +89,11 @@
                                     <span>{{$friend->username}}</span>
                                 </div>
                                 <div class="col-lg-1 col-lg-offset-2">
-                                    <a target="_blank" href="{{url('user/'.$friend->id)}}"><img class="friend_list_icon" src="{{asset('static/images/my/friend/detail.png')}}"></a>
+                                    <a target="_blank" href="{{url('user/'.$friend->id)}}"><img title="用户资料" class="friend_list_icon" src="{{asset('static/images/my/friend/detail.png')}}"></a>
                                 </div>
-                                <div class="col-lg-1">
+                                <div class="col-lg-1 delete_div_fork">
                                     {{--<a onclick="cancelFork({{$user->id}},{{$friend->id}},this);"><img class="friend_list_icon" src="{{asset('static/images/my/friend/delete.png')}}"></a>--}}
-                                    <input class="friend_list_icon" onclick="cancelFork({{$user->id}},{{$friend->id}},this);" type="image" src="{{asset('static/images/my/friend/delete.png')}}">
+                                    <input title="取消关注" class="friend_list_icon" onclick="cancelFork({{$user->id}},{{$friend->id}},this);" type="image" src="{{asset('static/images/my/friend/delete.png')}}">
                                 </div>
                             </div>
                         </li>
@@ -114,7 +114,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <textarea id="blogContent" name="blogContent" placeholder="分享你的点点滴滴吧~" class="form-control" rows="3"></textarea>
-                            <input type="file" name="blogImg" id="blog_file" style="display: none;">
+                            <input type="file" name="blogImg" id="blog_file" onchange="fileChange();" style="display: none">
                         </div>
                     </form>
                 </div>
@@ -132,6 +132,14 @@
                                 <button onclick="addPic();" type="button" class="btn btn-info">添加图片</button>
                                 <button onclick="releaseBlog();" type="button" class="btn btn-primary">发布</button>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-9" id="file_path_icon" style="display:none;">
+                            <span id="file_path"></span>
+                            <a href="javascript:void(0)">
+                                <img onclick="deleteFile();" src="{{asset('static/images/my/friend/close1.png')}}">
+                            </a>
                         </div>
                     </div>
                     <script type="text/javascript">
@@ -154,12 +162,17 @@
                         <div class="col-lg-1">
                             <img  class="img-rounded blog_avatar" src="{{$blog->portrait?asset('uploads/avatar/'.$blog->portrait):asset('static/images/my/temp.png')}}">
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-5">
                             <h4>{{$blog->username}}</h4>
                         </div>
-                        <div class="col-lg-3 col-lg-offset-2">
+                        <div class="col-lg-3 col-lg-offset-2" style="padding-left: 40px">
                             <h5>{{date('Y-m-d H:i:s',$blog->created_at)}}</h5>
                         </div>
+                        @if($blog->userId==$user->id)
+                        <div class="col-lg-1" style="padding-top: 5px">
+                            <a href="javascript:void(0)"><img onclick="deleteBlog(this,{{$blog->blogId}});" src="{{asset('static/images/my/friend/delete1.png')}}"/></a>
+                        </div>
+                        @endif
                         <div class="col-lg-12 blog_content_div">
                             <p class="blog_content">{{$blog->content}}</p>
                         </div>
@@ -170,7 +183,7 @@
                         @endif
                         <div class="col-lg-2 col-lg-offset-9 blog_praise_div">
                             <div class="col-lg-4 col-lg-offset-2">
-                                <a class="praise_btn" href="javascript:void(0)"><img onclick="praise(this,{{$user->id}},{{$blog->blogId}});" class="blog_icon" src="{{asset('static/images/my/friend/praise.png')}}"></a>
+                                <a class="praise_btn" href="javascript:void(0)"><img onclick="praise(this,{{$user->id}},{{$blog->blogId}});" class="blog_icon" src="{{isset($blog->praiseOwn)?asset('static/images/my/friend/praise1.png'):asset('static/images/my/friend/praise.png')}}"></a>
                             </div>
                             <div class="col-lg-6 praise_count_div">
                                 @if(isset($praises[$blog->blogId]))
@@ -178,8 +191,10 @@
                                 @endif
                             </div>
                         </div>
-                        {{--<div class="col-lg-1 praise_count_div">--}}
-                        {{--</div>--}}
+
+                        {{--@if(isset($blog->praiseOwn))--}}
+                            {{--hahah--}}
+                        {{--@endif--}}
                         <div class="col-lg-1 blog_comment_div">
                             <a class="comment_btn" href="javascript:void(0)"><img class="blog_icon" src="{{asset('static/images/my/friend/comment.png')}}"></a>
                         </div>
@@ -220,13 +235,6 @@
                                 <a class="close_btn" href="javascript:void(0)"><img class="blog_icon" src="{{asset('static/images/my/friend/close.png')}}"></a>
                             </div>
                         </div>
-                        @if($blog->userId==$user->id)
-                        <div class="col-lg-1 col-lg-offset-10">
-                            <div class="col-lg-1 col-lg-offset-12">
-                                <a href="javascript:void(0)"><img onclick="deleteBlog(this,{{$blog->blogId}});" src="{{asset('static/images/my/friend/delete1.png')}}"/></a>
-                            </div>
-                        </div>
-                        @endif
                     </div>
                     <HR class="HR" style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width="100%" color=#987cb9 SIZE=1>
                 @endforeach

@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">用户信息</h3>
                 </div>
@@ -49,13 +49,9 @@
                                     <label class="col-lg-2 control-label">性别</label>
 
                                     <div class="col-lg-5">
-                                        <label class="radio-inline">
-                                            <input disabled class="input_radio_data" id="radio_man" type="radio" name="User[sex]" value="男" {{$other->sex=='男'?'checked':''}}>男
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input disabled class="input_radio_data" id="radio_woman" type="radio" name="User[sex]" value="女" {{$other->sex=='女'?'checked':''}}>女
-                                        </label>
+                                        <input value="{{$other->sex}}" readonly="readonly" type="text" name="User[sex]" class="form-control input_data" id="sex" placeholder="请输入您的年龄">
                                     </div>
+
                                 </div>
 
                                 <div class="form-group">

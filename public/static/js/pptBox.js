@@ -86,9 +86,9 @@
         },
         clickPic:function(idx){
             var parame = this._box[idx];
-            if(parame.href&&parame.href!=""){
-                window.open(parame.href,this.target);
-            }
+            // if(parame.href&&parame.href!=""){
+            //     window.open(parame.href,this.target);
+            // }
         },
         add:function (imgParam){
             this._box[this._box.length] = imgParam;

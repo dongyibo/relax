@@ -138,6 +138,15 @@ class LoginController extends Controller {
             unset($user['validate']);
             //密码采用MD5加密
             $user['password'] = md5($user['password']);
+            //身高体重默认值
+            if ($user['sex']=='男'){
+                $user['height'] = 170;
+                $user['weight'] = 60;
+            }
+            else{
+                $user['height'] = 160;
+                $user['weight'] = 50;
+            }
             //新的用户插入数据库
             $new_user = Member::create($user);
             //并且为用户建立好友表数据（自己对自己）

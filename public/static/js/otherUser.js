@@ -33,7 +33,8 @@ function initUserChart(){
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: date
+                data: date,
+                name : '日期'
             },
             yAxis: {
                 type: 'value',

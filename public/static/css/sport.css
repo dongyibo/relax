@@ -49,6 +49,7 @@
 }
 
 .unit{
+    display: inline-block;
     color:silver;
     /*margin-left: 20px;*/
 }
