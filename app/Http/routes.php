@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Route::get('test',['uses'=>'AdminController@test']);
+Route::any('test1',['uses'=>'AdminController@test1']);
 
 //把web加入中间件，设置群路由
 Route::group(['middleware'=>['web']],function(){
